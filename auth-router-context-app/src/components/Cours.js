@@ -9,7 +9,9 @@ const Cours = ({co}) => {
                 <h2 className="card-title text-4xl">{co.name}</h2>
                 <p className='text-l text-left'>{co.detail}</p>
                 <div className="card-actions justify-end">
-                <button className=" btn btn-primary">View Details...</button>
+                    <Link to={`/details/${co.id}`}>
+                        <button className=" btn btn-primary">View Details...</button>
+                    </Link>
                 </div>
             </div>
         </div>

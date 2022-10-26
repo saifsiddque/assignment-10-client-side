@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Cours from './Cours';
 import './Courses.css';
 
@@ -14,7 +14,9 @@ const Courses = () => {
                     {
                         courses.map(c =>
                             (<li>
-                                <a className='border-l-4 border-l-primary m-2'>{c.name}</a>
+                                <Link to={`/details/${c.id}`}>
+                                    <a className='border-l-4 border-l-primary m-2'>{c.name}</a>
+                                </Link>
                             </li>))
                     }
                 </ul>

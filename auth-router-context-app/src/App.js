@@ -9,6 +9,7 @@ import Login from './components/Login';
 import PrivetRout from './routes/PrivetRout';
 import Orders from './components/Orders';
 import Courses from './components/Courses';
+import Detail from './components/Detail';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,13 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/details/:id',
+        element:<Detail></Detail> ,
+        loader:({params}) =>{
+          return fetch(`http://localhost:5000/product/${params.id}`)
+        }
       }
       
     ]
