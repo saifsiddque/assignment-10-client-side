@@ -7,6 +7,10 @@ const Detail = () => {
     return (
         <div className=' p-20'>
             <div className="card container card-compact  m-auto bg-base-100 shadow-xl">
+                <div className='flex justify-between p-4 '>
+                    <h2 className='text-3xl border-l-4 border-l-primary'>{data.name}</h2>
+                    <button className="btn btn-primary">Download</button>
+                </div>
                 <figure><img src={data.logo} alt="Shoes" /></figure>
                 <div className="card-body text-left">
                     <h2 className="card-title"> In This Course</h2>
@@ -16,7 +20,7 @@ const Detail = () => {
                     <h2 className="card-title underline">Price: {data.price}TK</h2>
                     <h2 className="card-title text-primary">{data.total}h 00m</h2>
                     <div className="card-actions justify-end">
-                    <Link to='/getPremium'><button className="btn btn-primary">Get premium access.</button></Link>
+                    <Link to={`/getPremium/${data.id}`}><button className="btn btn-primary">Get premium access.</button></Link>
                     </div>
                 </div>
             </div>

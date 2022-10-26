@@ -11,11 +11,14 @@ import Orders from './components/Orders';
 import Courses from './components/Courses';
 import Detail from './components/Detail';
 import GetPremium from './components/GetPremium';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path:'/',
     element:<Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
+
     children:[
       {
         path:'/courses',
@@ -25,10 +28,13 @@ const router = createBrowserRouter([
         }
       },
       {
-        path:'/getPremium',
+        path:'/getPremium/:id',
         element: <PrivetRout>
           <GetPremium></GetPremium>
-        </PrivetRout>
+        </PrivetRout>,
+        loader:({params}) =>{
+          return fetch(`http://localhost:5000/product/${params.id}`)
+        }
       },
       {
         path:'/login',
