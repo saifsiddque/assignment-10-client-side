@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/UserContext';
 
 const Register = () => {
+    const [error, seterror ] = useState('')
     const {createUser, signInWithGoogle, updateUserProfile} = useContext(AuthContext);
     console.log(createUser)
     const handleSubmit = event =>{
@@ -23,6 +24,8 @@ const Register = () => {
         })
         .catch(error =>{
             console.error(error)
+            seterror(error.message)
+
         })
 
 
@@ -85,6 +88,8 @@ const Register = () => {
                                 <label className="label">
                                     <Link to="/login" className="label-text-alt link link-hover">Already have an account ?</Link>
                                 </label>
+                                <p className=' text-left text-red-500'>{error}</p>
+
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Register</button>

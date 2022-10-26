@@ -30,10 +30,11 @@ const Header = () => {
                     {user?.uid? 
                     <>
                         <span>
-                            <img style={{'borderRadius':'50%'}} className='h-12 rounded-full mr-2' src={user.photoURL} alt="" />
+                            <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
+                                <img style={{'borderRadius':'50%'}} className=' h-12 rounded-full mr-2' src={user.photoURL} alt="" />
+                            </div>
                         </span>
                         
-                        <span>  {user.displayName}</span>
                     </> : <Link to='/login' className="btn btn-sm ml-2">log in</Link>
                    
                     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Detail = () => {
     const data = useLoaderData()
@@ -16,7 +16,7 @@ const Detail = () => {
                     <h2 className="card-title underline">Price: {data.price}TK</h2>
                     <h2 className="card-title text-primary">{data.total}h 00m</h2>
                     <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Get premium access.</button>
+                    <Link to='/getPremium'><button className="btn btn-primary">Get premium access.</button></Link>
                     </div>
                 </div>
             </div>

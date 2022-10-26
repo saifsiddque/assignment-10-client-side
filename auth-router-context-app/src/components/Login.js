@@ -1,11 +1,16 @@
-import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/UserContext';
 
 
 const Login = () => {
+    const [error, seterror ] = useState('')
     const {signIn, signInWithGoogle, signInWithGithub} = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
+
     const handleSubmit = event =>{
         event.preventDefault();
         const form = event.target;
@@ -18,10 +23,12 @@ const Login = () => {
             const user = result.user
             console.log(user)
             form.reset();
-            navigate('/')
+            navigate(from, {replace: true})
         })
         .catch(error => {
             console.error(error)
+            seterror(error.message)
+
         })
 
 
@@ -31,6 +38,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true})
+
         })
         .catch(error =>{
             console.error(error)
@@ -41,6 +50,8 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true})
+
         })
         .catch(error =>{
             console.error(error)
@@ -70,6 +81,7 @@ const Login = () => {
                             <label className="label">
                                 <a href="/register" className="label-text-alt link link-hover">Create a New Account?</a>
                             </label>
+                            <p className=' text-left text-red-500'>{error}</p>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>

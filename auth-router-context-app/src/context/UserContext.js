@@ -15,12 +15,15 @@ const UserContext = ({children}) => {
         return createUserWithEmailAndPassword(auth , email, password)
     }
     const signIn = (email, password) =>{
+        setloading(true)
         return signInWithEmailAndPassword( auth, email, password)
     }
     const signInWithGoogle = () =>{
+        setloading(true)
         return signInWithPopup(auth, googleProvider )
     }
     const signInWithGithub = () =>{
+        setloading(true)
         return signInWithPopup (auth, githubProvider )
     }
     const updateUserProfile = (profile) =>{

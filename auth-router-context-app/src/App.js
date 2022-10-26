@@ -10,6 +10,7 @@ import PrivetRout from './routes/PrivetRout';
 import Orders from './components/Orders';
 import Courses from './components/Courses';
 import Detail from './components/Detail';
+import GetPremium from './components/GetPremium';
 
 const router = createBrowserRouter([
   {
@@ -24,9 +25,9 @@ const router = createBrowserRouter([
         }
       },
       {
-        path:'/orders',
+        path:'/getPremium',
         element: <PrivetRout>
-          <Orders></Orders>
+          <GetPremium></GetPremium>
         </PrivetRout>
       },
       {
