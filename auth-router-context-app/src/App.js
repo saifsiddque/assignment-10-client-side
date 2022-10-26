@@ -21,6 +21,10 @@ const router = createBrowserRouter([
 
     children:[
       {
+        path:'/',
+        element:<Home></Home>
+      },
+      {
         path:'/courses',
         element: <Courses></Courses>,
         loader:() =>{

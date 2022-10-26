@@ -8,6 +8,9 @@ const Main = () => {
         <div>
             <Header></Header>
             <Outlet></Outlet>
+            <footer className=' p-2 bg-black text-white static w-full mt-4 bottom-0 mt-40'>
+            © 2022 techTEACH, Inc.
+            </footer>
         </div>
     );
 }; 
