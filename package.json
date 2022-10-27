@@ -5,6 +5,7 @@
     "tailwindcss": "^3.2.1"
   },
   "dependencies": {
-    "daisyui": "^2.33.0"
+    "daisyui": "^2.33.0",
+    "react-to-pdf": "^0.0.14"
   }
 }

@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: 25% 75%;
 }
+@media screen and (max-width: 480px) {
+    .grid{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+  }

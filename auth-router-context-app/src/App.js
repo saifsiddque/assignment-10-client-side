@@ -11,6 +11,8 @@ import Courses from './components/Courses';
 import Detail from './components/Detail';
 import GetPremium from './components/GetPremium';
 import ErrorPage from './components/ErrorPage';
+import Blogs from './components/Blogs';
+import FAQ from './components/FAQ';
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,14 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:'/blogs',
+        element:<Blogs></Blogs>
+      },
+      {
+        path:'/faq',
+        element:<FAQ></FAQ>
       },
       {
         path:'/details/:id',
