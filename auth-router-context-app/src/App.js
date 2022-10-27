@@ -1,5 +1,4 @@
 import logo from './logo.svg';
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from './layout/Main';
 import Home from './components/Home';
@@ -28,7 +27,7 @@ const router = createBrowserRouter([
         path:'/courses',
         element: <Courses></Courses>,
         loader:() =>{
-          return fetch('http://localhost:5000/allProducts')
+          return fetch('https://server-saifsiddque.vercel.app/allProducts')
         }
       },
       {
@@ -37,7 +36,7 @@ const router = createBrowserRouter([
           <GetPremium></GetPremium>
         </PrivetRout>,
         loader:({params}) =>{
-          return fetch(`http://localhost:5000/product/${params.id}`)
+          return fetch(`https://server-saifsiddque.vercel.app/product/${params.id}`)
         }
       },
       {
@@ -52,7 +51,7 @@ const router = createBrowserRouter([
         path:'/details/:id',
         element:<Detail></Detail> ,
         loader:({params}) =>{
-          return fetch(`http://localhost:5000/product/${params.id}`)
+          return fetch(`https://server-saifsiddque.vercel.app/product/${params.id}`)
         }
       }
       
