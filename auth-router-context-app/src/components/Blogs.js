@@ -3,8 +3,8 @@ import React from 'react';
 const Blogs = () => {
     return (
         <div>
-            <div className="container p-5">
-            <h1 className='text-5xl mb-8 text-left border-b-4'>Blogs </h1>
+            <div className="container p-5  ">
+            <h1 className='text-5xl mb-8 text-left border-b-4 '>Blogs </h1>
 
                 <div className='mb-4'>
                     <h2 className='text-2xl'>
